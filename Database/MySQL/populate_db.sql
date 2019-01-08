@@ -1,0 +1,62 @@
+LOAD DATA
+   LOCAL INFILE "data/Player.dat"
+   REPLACE INTO TABLE Player
+   FIELDS TERMINATED BY '|';
+
+
+LOAD DATA
+   LOCAL INFILE "data/University.dat"
+   REPLACE INTO TABLE University
+   FIELDS TERMINATED BY '|';
+
+
+LOAD DATA
+   LOCAL INFILE "data/Company.dat"
+   REPLACE INTO TABLE Company
+   FIELDS TERMINATED BY '|';
+
+LOAD DATA
+   LOCAL INFILE "data/Game.dat"
+   REPLACE INTO TABLE Game
+   FIELDS TERMINATED BY '|';
+
+LOAD DATA
+   LOCAL INFILE "data/Referee.dat"
+   REPLACE INTO TABLE Referee
+   FIELDS TERMINATED BY '|';
+
+LOAD DATA
+   LOCAL INFILE "data/Team.dat"
+   REPLACE INTO TABLE Team
+   FIELDS TERMINATED BY '|';
+
+LOAD DATA
+   LOCAL INFILE "data/State.dat"
+   REPLACE INTO TABLE State
+   FIELDS TERMINATED BY '|';
+
+LOAD DATA
+   LOCAL INFILE "data/Coach.dat"
+   REPLACE INTO TABLE Coach
+   FIELDS TERMINATED BY '|';
+
+LOAD DATA
+   LOCAL INFILE "data/playerEndorseCompany.dat"
+   REPLACE INTO TABLE playerEndorseCompany
+   FIELDS TERMINATED BY '|';
+
+LOAD DATA
+   LOCAL INFILE "data/playerPlayInGame.dat"
+   REPLACE INTO TABLE playerPlayInGame
+   FIELDS TERMINATED BY '|';
+
+LOAD DATA
+   LOCAL INFILE "data/refereeGuideGame.dat"
+   REPLACE INTO TABLE refereeGuideGame
+   FIELDS TERMINATED BY '|';
+
+LOAD DATA
+   LOCAL INFILE "data/teamPlayInGame.dat"
+   REPLACE INTO TABLE teamPlayInGame
+   FIELDS TERMINATED BY '|'
+

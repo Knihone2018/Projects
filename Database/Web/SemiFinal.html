@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+    <link rel="stylesheet" href="./style.css">
+    <head>
+        <title>statistics</title>
+    </head>
+    <body>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="list_player.php">Players</a></li>
+        <li><a href="list_team.php">Teams</a></li>
+        <li><a href="average.html">Average</a></li>
+        <li><a class="active" href="SemiFinal.html">Statistics</a></li>
+        <li style="float:right"><a href="datawarehouse.php">Data Warehouse</a></li>
+      </ul><br>
+
+        <img src="NBA.jpg" alt="NBA 2018-2019" width="200" style="float:right">
+        <br><br>
+        <br><br>
+        <br><br>
+        <p>
+            <h3>Players in each team</h3>
+            <form method=get action="get_player_in_team.php">
+                <select name = 'teamName'>
+                    <option value='Warriors'>Warriors</option>
+                    <option value='Lakers'>Lakers</option>
+                    <option value='Rockets'>Rockets</option>
+                    <option value='Pelicans'>Pelicans</option>
+                    <option value='Raptors'>Raptors</option>
+                    <option value='76ers'>76ers</option>
+                    <option value='Jazz'>Jazz</option>
+                    <option value='Bucks'>Bucks</option>
+                </select>
+                <input type="submit" value="Submit">
+            </form>
+        </p>
+
+        <p>
+            <h3>Which university has the most players in NBA?</h3>
+            <p><a href="most_nba_player.php" style="text-align:center"> click me! </a></p>
+        </p>
+
+        <p>
+            <h3>Find players by selecting the properties of teams that they are from.</h3>
+            <form method=get action="find_player_in_specific_team.php">
+                Team founded:
+                <select name = 'year'>
+                    <option value= 1950> after 1950 </option>
+                    <option value= 1990> after 1990 </option>
+                    <option value= 2000> after 2000 </option>
+                </select><br>
+                Team In a state with a population:
+                <select name = 'population'>
+                    <option value= 2000000> larger than 2 million </option>
+                    <option value= 4000000> larger than 4 million </option>
+                    <option value= 6000000> larger than 6 million </option>
+                </select><br>
+                <input type="submit" value="Submit">
+            </form>
+        </p>
+
+        <p>
+            <h3>Find players by selecting the properties of universities that they are from.</h3>
+            <form method=get action="find_player_from_a_specific_university.php">
+                University founded year:
+                <select name = 'year'>
+                    <option value= 1850> after 1850 </option>
+                    <option value= 1900> after 1900 </option>
+                    <option value= 1950> after 1950 </option>
+                </select><br>
+                University type:
+                <select name = 'type'>
+                    <option value= 'Public'> Public</option>
+                    <option value= 'Private'> Private </option>
+                </select><br>
+                <input type="submit" value="Submit">
+            </form>
+        </p>
+
+        <p>
+            <h3>Add a label to show whether a team has played with target team.</h3>
+            <form method=get action="find_compete_team.php">
+                Teams competed with
+                <select name = 'teamName'>
+                    <option value='Warriors'>Warriors</option>
+                    <option value='Lakers'>Lakers</option>
+                    <option value='Rockets'>Rockets</option>
+                    <option value='Pelicans'>Pelicans</option>
+                    <option value='Raptors'>Raptors</option>
+                    <option value='76ers'>76ers</option>
+                    <option value='Jazz'>Jazz</option>
+                    <option value='Bucks'>Bucks</option>
+                </select>
+                or not?<br>
+                <input type="submit" value="Submit">
+            </form>
+        </p>
+
+        <p>
+            <h3>Find endorsement information by selecting company and price.</h3>
+            <form method=get action="find_player_endorsement.php">
+                Company:
+                <select name = 'company'>
+                    <option value='Nike'> Nike </option>
+                    <option value='Adidas'> Adidas </option>
+                    <option value='Under Armour'> Under Armour </option>
+                    <option value='Coca-Cola'> Coca-Cola </option>
+                    <option value='Tencent'> Tencent </option>
+                    <option value='Samsung'> Samsung </option>
+                    <option value='Beats'> Beat </option>
+                    <option value='Foot Locker'> Foot Locker </option>
+                </select><br>
+                Price:
+                <select name = 'price'>
+                    <option value= 1000000> no less than 1 million </option>
+                    <option value= 3000000> no less than 3 million  </option>
+                    <option value= 5000000> no less than 5 million  </option>
+                </select><br>
+                <input type="submit" value="Submit">
+            </form>
+        </p>
+    </body>
+</html>

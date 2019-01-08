@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <link rel="stylesheet" href="./style.css">
+  <head>
+    <title>NBA Player</title>
+  </head>
+    <body>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="list_player.php">Players</a></li>
+        <li><a href="list_team.php">Teams</a></li>
+        <li><a class="active" href="average.html">Average</a></li>
+        <li><a href="SemiFinal.html">Statistics</a></li>
+        <li style="float:right"><a href="datawarehouse.php">Data Warehouse</a></li>
+      </ul><br>
+    <img src="NBA.jpg" alt="NBA 2018-2019" width="200" style="float:right">
+    <br><br> 
+    <br><br> 
+    <br><br> 
+<div>
+<h3>Get player average score</h3>
+  <form method=get action="get_player_average.php">
+    <select name = 'id'>
+      <option value=1>Lebron James</option>
+      <option value=2>Kevin Durant</option>
+      <option value=3>Anthony Davis</option>
+      <option value=4>James Harden</option>
+      <option value=5>Stephen Curry</option>
+      </select>
+      <input type="submit" value="Submit">
+   </form>
+</div>
+
+<div>
+  <h3>Average Points for each position</h3>
+  <form method=get action="get_position_average.php">
+    <select name = 'position'>
+      <option value='PG'> Point Guard </option>
+      <option value='SG'> Shooting Guard </option>
+      <option value='SF'> Small Forward </option>
+      <option value='PF'> Power Forward </option>
+      <option value='C'> Center </option>
+    </select>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+
+   </body>
+</html>

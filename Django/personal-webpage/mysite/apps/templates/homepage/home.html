@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hong Ni</title>
+	<link rel="icon" href="https://vavelo-dew.netlify.com/assets/img/favicon.ico" type="image/x-icon">
+
+	<!-- CSS PLUGIN -->
+
+
+	<link rel="stylesheet" href="https://vavelo-dew.netlify.com/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://vavelo-dew.netlify.com/assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="https://vavelo-dew.netlify.com/assets/css/owl.theme.css">
+	<link rel="stylesheet" href="https://vavelo-dew.netlify.com/assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="https://vavelo-dew.netlify.com/assets/css/flexslider.css">
+	<link rel="stylesheet" href="https://vavelo-dew.netlify.com/assets/css/aos.css">
+
+	<!-- MAIN STYLE -->
+	<!--link rel="stylesheet" href="https://vavelo-dew.netlify.com/assets/css/style.css"-->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+	<!-- RESPONSIVES STYLE -->
+	<link rel="stylesheet" href="https://vavelo-dew.netlify.com/assets/css/style-responsives.css">
+
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Hind:600|Lato:300,400" rel="stylesheet">
+
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+	<!-- PRELOADER-->
+	<div id="preloader">
+		<div id="status">
+			<div class="loader-revolve center">
+				<span></span>
+			</div>
+		</div>
+	</div>
+	<!-- END PRELOADER -->
+
+	<!-- NAVIGATION -->
+	<div id="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="logo">
+						<a href="home.html">2019</a>
+					</div>
+				</div>
+
+				<div class="col-sm-9">
+					<div class="navigation-menu">
+						<div class="navbar">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div>
+							<div class="navbar-collapse collapse">
+								<ul class="nav navbar-nav navbar-right">
+									<!-- navigation menu items -->
+									<li>
+										<a class="line active smoth-scroll" href="#home">Home</a>
+									</li>
+									<li>
+										<a class="line smoth-scroll" href="#about">About</a>
+									</li>
+									<li>
+										<a class="line smoth-scroll" href="#skills">Skills</a>
+									</li>
+									<li>
+										<a class="line smoth-scroll" href="#projects">Projects</a>
+									</li>
+									<li>
+										<a class="line smoth-scroll" href="#experience">Experience</a>
+									</li>
+									<li>
+										<a class="line smoth-scroll" href="#education">Education</a>
+									</li>
+									<li>
+										<a class="line smoth-scroll" href="#contact">Contact</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END NAVIGATION -->
+
+	<!-- HOME -->
+	<div id="home" class="home-bg box-intro" style="background-image: url('https://vavelo-dew.netlify.com/assets/img/bg.jpg')" data-stellar-background-ratio="0.6">
+		<div class="overlay">
+			<div class="container">
+				<div class="row">
+					<div class="home-text">
+						<!-- profile picture -->
+						<div class="profile-pic" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0">
+							<img src="{% static 'hong.jpeg' %}" height="500" class="img-responsive" alt="" />
+						</div>
+
+						<!-- home title -->
+						<div data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0">
+							<h1>Hi, I'm Hong Ni</h1>
+							<h3 id="text-rotator">
+								<div>Software Engineer</div>
+								<div>Data Analyst</div>
+							</h3>
+						</div>
+					</div>
+
+					<!-- arrow button -->
+					<a class="smoth-scroll" href="#about">
+						<i class="fa fa-angle-down arrow"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END HOME -->
+
+	<!-- ABOUT -->
+	<section id="about">
+		<div class="container">
+			<div class="row">
+				<!--div class="description col-md-6 col-sm-4 col-xs-12"-->
+				<div class="col-md-10 col-sm-10 col-xs-12">
+					<h2>Hello, I am Hong</h2>
+					<h4>Master Student of Computer Science at UChicago</h4>
+					<p> Before I started my journey in UChicago, I was a physicist doing research on Heavy Ion Physics. The daily usage of C++ and Python triggered
+						my interests on pursuring a career in software engineering. It was thrilling to see that computer science skills are widely used in academia. Now, I
+						am seeking opportunities to apply my combined background to industry and ready to make a difference.
+					</p><br>
+
+					<!-- about button -->
+					<p>
+						{% for pdf in pdfs.all %}
+						{% if pdf.name == 'resume_v3' %}
+						<a href="{{ pdf.pdf.url }}" class="btn btn-dark with-arrow smoth-scroll">My Resume
+							<i class="fa fa-download"></i>
+						</a>
+						{% endif %}
+						{% endfor %}
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- END ABOUT -->
+
+	<!-- SKILLS -->
+	<section id="skills">
+
+		<div class="container">
+			<p class="text-center col-md-12 col-sm-12 col-xs-12">During my Ph.D. research, C++ is used on a daily basis due to its amazing performance. Comparing to C++,
+			   Python is much more handy. I choose to use Python when working on my hobby projects such as web
+			   scraping and test programming ideas.
+		    </p>
+		</div><br><br>
+
+		<div class="container">
+			<div class="row">
+				<h3 class="text-center">Programming Languages</h3><br><br>
+				<div class="col-md-2 col-sm-2 col-xs-2"></div>
+			    <div class="col-md-4 col-sm-4 col-xs-4">
+			    	<h4> Frequently Used </h4>
+			    	<ul>
+			    		<li>Python</li>
+			    		<li>C++</li>
+			    		<li>C</li>
+			    		<li>SQL</li>
+			    	</ul>
+			    </div>
+
+			    <div class="col-md-4 col-sm-4 col-xs-4 pull-right">
+				    <h4> Know Basics </h4>
+				    <ul>
+					    <li>Java</li>
+					    <li>HTML</li>
+					    <li>CSS</li>
+						<li>PHP</li>
+				    </ul>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2"></div>
+			</div>
+		</div><br><br>
+
+		<div class="container">
+			<div class="row">
+				<h3 class="text-center"> Software & Tool </h3><br><br>
+				<div class="col-md-2 col-sm-2 col-xs-2"></div>
+				<div class="col-md-4 col-sm-4 col-xs-4">
+					<h4> Software </h4>
+					<ul>
+						<li>Windows</li>
+						<li>Linux</li>
+						<li>Latex</li>
+						<li>ROOT</li>
+					</ul>
+				</div>
+
+				<div class="col-md-4 col-sm-4 col-xs-4 pull-right">
+					<h4> Tool </h4>
+					<ul>
+						<li>Vim</li>
+						<li>Atom</li>
+						<li>Git</li>
+						<li>SVN</li>
+					</ul>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2"></div>
+			</div>
+		</div><br><br>
+
+		<div class="container">
+			<div class="row text-center">
+				<h3> Web Development </h3><br><br>
+				<div class="col-md-2">
+					<p>Django</p>
+				</div>
+				<div class="col-md-2">
+					<p>Postgresql</p>
+				</div>
+				<div class="col-md-2">
+					<p>Bootstrap</p>
+				</div>
+				<div class="col-md-2">
+					<p>PHP</p>
+				</div>
+				<div class="col-md-2">
+					<p>HTML</p>
+				</div>
+				<div class="col-md-2">
+					<p>CSS</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- END SKILLS -->
+
+	<!-- POROJECTS -->
+	<section id="projects">
+		<div class="container">
+			<div class="row">
+				<div data-aos="fade-up">
+					<div class="col-md-12 text-center">
+						<h2>Selected Projects</h2>
+					</div>
+
+					<div class="col-md-12 col-sm-12">
+						<!-- portfolio menu -->
+						<div class="filter-btn col-md-12 text-center">
+							<div class="filter active" data-filter="all">All</div>
+							<div class="filter" data-filter=".website">Website</div>
+							<div class="filter" data-filter=".database">Database</div>
+							<div class="filter lst-cld" data-filter=".scraping">Web Scraping</div>
+						</div>
+
+						<!-- portfolio items -->
+						<div id="port-image" class="container">
+							<div class="row">
+								{% for project in projects.all %}
+								<div class="{{ project.type }} mix col-md-4 col-sm-6 col-xs-12">
+									<a href='{{ project.image.url }}' class="image-popup">
+										<figure class="port-desc">
+											<img src='{{ project.image.url }}' class="img-responsive" alt="Project">
+											<figcaption>
+												<h4>{{ project.name }}</h4>
+												{% for detail in project.details.all %}
+												<h5>{{ detail }}</h5>
+												{% endfor %}
+											</figcaption>
+										</figure>
+									</a>
+							    </div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- END PROJECTS -->
+
+	<!-- EXPERIENCE -->
+	<section id="experience">
+		<div class="container">
+            <div class='container'>
+			    <h4>Research Assistant at Vanderbilt University (Aug. 2015 -- Aug. 2018)</h4>
+				<ul>
+					<li>Studied a new matter believed to exist at the beginning of the University with heavy ion collisions</li>
+					<li>Led two analyses with on published in Physics Letters B and the second one is in review</li>
+					<li>C++, Python, and Job scheduler (SLURM) used in a daily basis to analyze data in terabyte scale</li>
+					<li>Detected and proved an issue in a dataset, and saved weeks' efforts of colleagues</li>
+				</ul>
+				<br>
+			</div>
+			<div class='container'>
+				<h4>Teaching Assistant at Vanderbilt University (Aug. 2012 -- Jul. 2015)</h4>
+				<ul>
+					<li>Performed activities like teaching, grading, holding help-desk session</li>
+					<li>Facilitated group session and provied one-on-one support</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<!-- END EXPERIENCE -->
+
+	<!-- EDUCATION -->
+	<section id="education">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Education</h2>
+				</div>
+				<div class='row'>
+					<div class='col-md-1 col-sm-2 col-xs-3'>
+						<img src="{% static 'uchicago.jpeg' %}" style="width:100px;" class="img-responsive" alt="" />
+					</div>
+				    <div class='col-md-11 col-sm-10 col-xs-9'>
+				    	<h4>University of Chicago, Chicago, IL (Oct. 2018 -- Present)</h4>
+				    	<p>Master of Science in Computer Science, Expected in Jan. 2020</p>
+				    	<p>GPA: 4.0/4.0</p>
+				    	<p>Related Courses: </p>
+				    	<p style="margin-left: 40px">Advanced Programming, Algorithms, Database</p>
+						<br>
+				    </div>
+				</div>
+				<div class="row">
+					<div class='col-md-1 col-sm-2 col-xs-3'>
+						<img src="{% static 'vanderbilt.png' %}" style="width:100px;" class="img-responsive" alt="" />
+					</div>
+				    <div class='col-md-11 col-sm-10 col-xs-9'>
+				    	<h4>Vanderbilt University, Nashville, TN (Aug. 2012 -- Aug. 2018)</h4>
+				    	<p>Ph.D. in Physics</p>
+				    	<p>GPA: 3.96/4.00</p>
+				    	<p>Selected Awards: </p>
+				    	<p style="margin-left: 40px">The Most Outstanding Student Publication Award (2017)</p>
+				    	<p style="margin-left: 40px">The Robert T. Lagemann Award (2013)</p>
+						<br>
+				    </div>
+			    </div>
+
+                <div class="row">
+					<div class='col-md-1 col-sm-2 col-xs-3'>
+						<img src="{% static 'ustc.jpeg' %}" style="width:100px;" class="img-responsive" alt="" />
+					</div>
+				    <div class='col-md-11 col-sm-10 col-xs-9'>
+				    	<h4>University of Science and Technology of China, Hefei, China (Aug. 2008 -- Jun. 2012)</h4>
+				    	<p>B.S. in Physics</p>
+				    </div>
+			    </div>
+			</div>
+		</div>
+	</section>
+	<!-- END EDUCATION -->
+
+	<!-- CONTACT -->
+	<section id="contact">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h2>Contact</h2>
+				</div>
+
+				<div class="address-icons col-md-8 col-md-offset-2">
+					<div class="col-md-4 col-sm-4">
+						<i class="fa fa-envelope-o fa-2x"></i>
+						<p>hongni@uchicago.edu</p>
+					</div>
+
+					<div class="col-md-4 col-sm-4">
+						<i class="fa fa-map-marker fa-2x"></i>
+						<p>Chicago, IL 60615
+						</p>
+					</div>
+
+					<div class="col-md-4 col-sm-4">
+						<i class="fa fa-phone fa-2x"></i>
+						<p>+1 615 983 0963</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- END CONTACT -->
+
+	<!-- JS PLUGIN -->
+
+	<script src="https://vavelo-dew.netlify.com/assets/js/jquery.js"></script>
+	<script src="https://vavelo-dew.netlify.com/assets/js/bootstrap.min.js"></script>
+	<script src="https://vavelo-dew.netlify.com/assets/js/jquery.stellar.min.js"></script>
+	<script src="https://vavelo-dew.netlify.com/assets/js/text-rotate.js"></script>
+	<script src="https://vavelo-dew.netlify.com/assets/js/numscroller.js"></script>
+	<script src="https://vavelo-dew.netlify.com/assets/js/owl.carousel.min.js"></script>
+	<script src="https://vavelo-dew.netlify.com/assets/js/jquery.wow.min.js"></script>
+	<script src="https://vavelo-dew.netlify.com/assets/js/jquery.appear.js"></script>
+	<script src="https://vavelo-dew.netlify.com/assets/js/masonry/imagesloaded.pkgd.min.js"></script>
+	<script src="https://vavelo-dew.netlify.com/assets/js/progress-bar.min.js"></script>
+	<script src="https://vavelo-dew.netlify.com/assets/js/jquery.mixitup.js"></script>
+	<script src="https://vavelo-dew.netlify.com/assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="https://vavelo-dew.netlify.com/assets/js/magnific-popup-options.js"></script>
+	<script src="https://vavelo-dew.netlify.com/assets/js/jquery.flexslider-min.js"></script>
+	<script src="https://vavelo-dew.netlify.com/assets/js/aos.js"></script>
+	<script src="https://vavelo-dew.netlify.com/assets/js/app.js"></script>
+	<script src="https://vavelo-dew.netlify.com/assets/js/jquery.form.js"></script>
+	<script src="https://vavelo-dew.netlify.com/assets/js/jquery.validate.min.js"></script>
+	<!-- MAIN JS -->
+	<script src="https://vavelo-dew.netlify.com/assets/js/main.js"></script>
+</body>
+
+</html>

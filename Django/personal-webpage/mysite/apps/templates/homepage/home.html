@@ -34,6 +34,26 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+	<SCRIPT type=text/javascript>
+		function  theClock()
+		{
+			var today = new Date();
+			var day;
+			if(today.getDay()==0)  day="Sunday"
+			if(today.getDay()==1)  day="Monday"
+	        if(today.getDay()==2)  day="Tuesday"
+	        if(today.getDay()==3)  day="Wednesday"
+	        if(today.getDay()==4)  day="Thursday"
+	        if(today.getDay()==5)  day="Friday"
+	        if(today.getDay()==6)  day="Saturday"
+			var sec = today.getSeconds()+1;
+			var date =day +", "
+			    + today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate()+
+				" " + today.getHours()+":"+today.getMinutes()+":"+sec;
+			document.getElementById("clock").innerHTML  = date;
+			}
+	</SCRIPT>
+	
 </head>
 
 <body>
@@ -52,9 +72,11 @@
 	<div id="navigation">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-md-3 col-sm-3 col-xs-3">
 					<div class="logo">
-						<a href="home.html">2019</a>
+						<a href="#home">
+							<SCRIPT type=text/javascript>document.write('<FONT  id="clock" ></FONT>');setInterval('theClock()',1000);</SCRIPT>
+                        </a>
 					</div>
 				</div>
 
@@ -145,13 +167,15 @@
 					<p> Before I started my journey in UChicago, I was a physicist doing research on Heavy Ion Physics. The daily usage of C++ and Python triggered
 						my interests on pursuring a career in software engineering. It was thrilling to see that computer science skills are widely used in academia. Now, I
 						am seeking opportunities to apply my combined background to industry and ready to make a difference.
-					</p><br>
+					</p><br><br>
 
 					<!-- about button -->
 					<p>
+						<a href="https://www.linkedin.com/in/hong-ni-b59017170/" class="btn btn-dark">LinkedIn</a>
+						<a href="https://github.com/Knihone2018" class="btn btn-dark">GitHub</a>
 						{% for pdf in pdfs.all %}
 						{% if pdf.name == 'resume_v3' %}
-						<a href="{{ pdf.pdf.url }}" class="btn btn-dark with-arrow smoth-scroll">My Resume
+						<a href="{{ pdf.pdf.url }}" class="btn btn-dark with-arrow smoth-scroll">Resume
 							<i class="fa fa-download"></i>
 						</a>
 						{% endif %}
@@ -301,7 +325,7 @@
 	<!-- EXPERIENCE -->
 	<section id="experience">
 		<div class="container">
-            <div class='container'>
+            <div class='container col-md-12 col-sm-12 col-xs-12'>
 			    <h4>Research Assistant at Vanderbilt University (Aug. 2015 -- Aug. 2018)</h4>
 				<ul>
 					<li>Studied a new matter believed to exist at the beginning of the University with heavy ion collisions</li>
@@ -311,7 +335,7 @@
 				</ul>
 				<br>
 			</div>
-			<div class='container'>
+			<div class='container col-md-12 col-sm-12 col-xs-12'>
 				<h4>Teaching Assistant at Vanderbilt University (Aug. 2012 -- Jul. 2015)</h4>
 				<ul>
 					<li>Performed activities like teaching, grading, holding help-desk session</li>
@@ -331,10 +355,10 @@
 				</div>
 				<div class='row'>
 					<div class='col-md-1 col-sm-2 col-xs-3'>
-						<img src="{% static 'uchicago.jpeg' %}" style="width:100px;" class="img-responsive" alt="" />
+						<a href="https://www.uchicago.edu/"><img src="{% static 'uchicago.jpeg' %}" style="width:100px;" class="img-responsive" alt="" /></a>
 					</div>
 				    <div class='col-md-11 col-sm-10 col-xs-9'>
-				    	<h4>University of Chicago, Chicago, IL (Oct. 2018 -- Present)</h4>
+				    	<h4><a href="https://www.uchicago.edu/">University of Chicago</a>, Chicago, IL (Oct. 2018 -- Present)</h4>
 				    	<p>Master of Science in Computer Science, Expected in Jan. 2020</p>
 				    	<p>GPA: 4.0/4.0</p>
 				    	<p>Related Courses: </p>
@@ -344,25 +368,25 @@
 				</div>
 				<div class="row">
 					<div class='col-md-1 col-sm-2 col-xs-3'>
-						<img src="{% static 'vanderbilt.png' %}" style="width:100px;" class="img-responsive" alt="" />
+						<a href="https://www.vanderbilt.edu/"><img src="{% static 'vanderbilt.png' %}" style="width:100px;" class="img-responsive" alt="" /></a>
 					</div>
 				    <div class='col-md-11 col-sm-10 col-xs-9'>
-				    	<h4>Vanderbilt University, Nashville, TN (Aug. 2012 -- Aug. 2018)</h4>
+				    	<h4><a href="https://www.vanderbilt.edu/">Vanderbilt University</a>, Nashville, TN (Aug. 2012 -- Aug. 2018)</h4>
 				    	<p>Ph.D. in Physics</p>
 				    	<p>GPA: 3.96/4.00</p>
 				    	<p>Selected Awards: </p>
-				    	<p style="margin-left: 40px">The Most Outstanding Student Publication Award (2017)</p>
-				    	<p style="margin-left: 40px">The Robert T. Lagemann Award (2013)</p>
+				    	<p style="margin-left: 40px"><a href="https://as.vanderbilt.edu/physics/graduate/awards.php">The Most Outstanding Student Publication Award (2017)</a></p>
+				    	<p style="margin-left: 40px"><a href="https://as.vanderbilt.edu/physics/graduate/awards.php">The Robert T. Lagemann Award (2013)</a></p>
 						<br>
 				    </div>
 			    </div>
 
                 <div class="row">
 					<div class='col-md-1 col-sm-2 col-xs-3'>
-						<img src="{% static 'ustc.jpeg' %}" style="width:100px;" class="img-responsive" alt="" />
+						<a href="http://en.ustc.edu.cn/index.html"><img src="{% static 'ustc.jpeg' %}" style="width:100px;" class="img-responsive" alt="" /></a>
 					</div>
 				    <div class='col-md-11 col-sm-10 col-xs-9'>
-				    	<h4>University of Science and Technology of China, Hefei, China (Aug. 2008 -- Jun. 2012)</h4>
+				    	<h4><a href="http://en.ustc.edu.cn/index.html">University of Science and Technology of China</a>, Hefei, China (Aug. 2008 -- Jun. 2012)</h4>
 				    	<p>B.S. in Physics</p>
 				    </div>
 			    </div>
@@ -381,8 +405,8 @@
 
 				<div class="address-icons col-md-8 col-md-offset-2">
 					<div class="col-md-4 col-sm-4">
-						<i class="fa fa-envelope-o fa-2x"></i>
-						<p>hongni@uchicago.edu</p>
+						<a href="mailto:hongni@uchicago.edu"><i class="fa fa-envelope-o fa-2x"></i>
+						<p>hongni@uchicago.edu</p></a>
 					</div>
 
 					<div class="col-md-4 col-sm-4">
